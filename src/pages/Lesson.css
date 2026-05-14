@@ -1,0 +1,239 @@
+.lesson {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr) 280px;
+  gap: var(--space-8);
+  padding-block: var(--space-10) var(--space-16);
+  align-items: flex-start;
+}
+
+.lesson__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  min-width: 0;
+}
+
+.lesson__anchor {
+  scroll-margin-top: 120px;
+  height: 0;
+}
+
+.lesson__hero {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.lesson__hero .section-eyebrow {
+  align-self: flex-start;
+}
+
+.lesson__title {
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.lesson__lead {
+  font-size: 16.5px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.lesson__lead code,
+.lesson__content code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--color-bg-alt);
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: var(--color-primary-deep);
+  border: 1px solid var(--color-line);
+}
+
+.diagram {
+  margin: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.diagram__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.diagram__flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.diagram__node {
+  flex: 1 1 180px;
+  min-width: 160px;
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--color-text);
+  border: 1px solid;
+}
+
+.diagram__node strong {
+  font-size: 16px;
+}
+
+.diagram__node small {
+  color: var(--color-text-muted);
+  font-size: 12.5px;
+}
+
+.diagram__icon {
+  font-size: 26px;
+}
+
+.diagram__node--api {
+  background: var(--color-teal-soft);
+  border-color: var(--color-teal-border);
+}
+
+.diagram__node--code {
+  background: var(--color-bg-alt);
+  border-color: var(--color-line-strong);
+}
+
+.diagram__node--frontend {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary-border);
+}
+
+
+.lesson__cta {
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--space-7);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-md);
+}
+
+.lesson__cta p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.lesson__rightbar {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tip-box {
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.tip-box h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.tip-box code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+.tip-box ol {
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+}
+
+.tip-box--amber {
+  background: var(--color-amber-soft);
+  border-color: #fde68a;
+  color: #78350f;
+}
+
+.tip-box--teal {
+  background: var(--color-teal-soft);
+  border-color: var(--color-teal-border);
+  color: #115e59;
+}
+
+.tip-box--violet {
+  background: var(--color-violet-soft);
+  border-color: #ddd6fe;
+  color: #5b21b6;
+}
+
+.tip-box--rose {
+  background: var(--color-rose-soft);
+  border-color: #fecdd3;
+  color: #9f1239;
+}
+
+.lesson__visual {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+@media (max-width: 1100px) {
+  .lesson {
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  }
+
+  .lesson__rightbar {
+    grid-column: 1 / -1;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .tip-box {
+    flex: 1 1 280px;
+  }
+}
+
+@media (max-width: 880px) {
+  .lesson {
+    grid-template-columns: 1fr;
+  }
+}

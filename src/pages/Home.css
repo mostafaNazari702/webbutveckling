@@ -1,0 +1,133 @@
+.hero {
+  background: radial-gradient(
+      1200px 480px at 50% -10%,
+      rgba(37, 99, 235, 0.12),
+      transparent 60%
+    ),
+    var(--color-bg);
+  padding-block: var(--space-16) var(--space-14);
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-6);
+}
+
+.hero__title {
+  font-size: clamp(36px, 5.2vw, 60px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 880px;
+  color: var(--color-text);
+}
+
+.hero__title-accent {
+  background: linear-gradient(120deg, #2563eb 0%, #14b8a6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__lead {
+  max-width: 640px;
+  font-size: 18px;
+  color: var(--color-text-muted);
+}
+
+.hero__actions {
+  display: inline-flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
+.hero__rail {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero__tile {
+  padding: 14px 22px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero__tile--primary {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-deep);
+  border-color: var(--color-primary-border);
+}
+
+.hero__tile--teal {
+  background: var(--color-teal-soft);
+  color: #0f766e;
+  border-color: var(--color-teal-border);
+}
+
+.hero__tile--amber {
+  background: var(--color-amber-soft);
+  color: #b45309;
+  border-color: #fde68a;
+}
+
+.hero__tile--rose {
+  background: var(--color-rose-soft);
+  color: #be123c;
+  border-color: #fecdd3;
+}
+
+.hero__art {
+  margin-top: var(--space-10);
+  max-width: 720px;
+  width: 100%;
+  border-radius: var(--radius-xl);
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+@media (max-width: 1100px) {
+  .learning-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .learning-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tech-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.tech-grid__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
