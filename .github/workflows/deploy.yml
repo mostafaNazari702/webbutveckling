@@ -6,12 +6,8 @@ on:
       - master
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
 
     steps:
       - name: Checkout repository
@@ -28,13 +24,11 @@ jobs:
       - name: Build production files
         run: npm run build
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: dist
-
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          keep_files: false
+          commit_message: 'Deploy to GitHub Pages from GitHub Actions'
